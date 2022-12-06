@@ -1,4 +1,6 @@
-const fs = require('fs');
+const { getData } = require('../utils');
+
+const data = getData(__dirname);
 
 function createStack() {
   const stack = [];
@@ -36,9 +38,7 @@ function parseMove(str) {
   return { quantity, from, to };
 }
 
-function formatInput() {
-  const data = fs.readFileSync('./input.txt', { encoding: 'utf-8' });
-
+function formatInput(data) {
   let [stacks, moves] = data.split('\n\n');
 
   stacks = stacks.split('\n').reverse().slice(1);
@@ -63,7 +63,6 @@ function formatInput() {
     let stackIndex = 0;
 
     if (stackIndex < cratesInRow) {
-
       for (let crateIndex = 1; crateIndex < row.length - 1; crateIndex += 4) {
         const value = row[crateIndex].trim();
 
@@ -81,8 +80,8 @@ function formatInput() {
   return { stacks: stacksActual, moves };
 }
 
-function dayFivePartOne() {
-  const { stacks, moves } = formatInput();
+function dayFivePartOne(data) {
+  const { stacks, moves } = formatInput(data);
 
   for (const move of moves) {
     const { quantity, from, to } = move;
@@ -99,8 +98,8 @@ function dayFivePartOne() {
   console.log(`Part One Result - ${result}`);
 }
 
-function dayFivePartTwo() {
-  const { stacks, moves } = formatInput();
+function dayFivePartTwo(data) {
+  const { stacks, moves } = formatInput(data);
 
   const tempStack = createStack();
 
@@ -124,5 +123,5 @@ function dayFivePartTwo() {
   console.log(`Part Two Result - ${result}`);
 }
 
-dayFivePartOne();
-dayFivePartTwo();
+dayFivePartOne(data);
+dayFivePartTwo(data);

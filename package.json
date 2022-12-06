@@ -1,0 +1,22 @@
+{
+  "name": "adventofcode2022",
+  "version": "1.0.0",
+  "description": "My Solutions for the Advent of Code 2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheFlyer1983/AdventOfCode2022.git"
+  },
+  "author": "Paul Livingstone <theflyer1983@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheFlyer1983/AdventOfCode2022/issues"
+  },
+  "homepage": "https://github.com/TheFlyer1983/AdventOfCode2022#readme",
+  "devDependencies": {
+    "vitest": "^0.25.4"
+  }
+}
