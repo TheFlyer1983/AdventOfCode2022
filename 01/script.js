@@ -27,11 +27,13 @@ function solutionOne(input) {
 function solutionTwo(input) {
   const elfData = getElfData(input);
 
-  const elfTotals = elfData.map((elf) => {
-    return elf.reduce((total, item) => {
-      return (total = total + item);
-    }, 0);
-  }).sort((a, b) => b - a);
+  const elfTotals = elfData
+    .map((elf) => {
+      return elf.reduce((total, item) => {
+        return (total = total + item);
+      }, 0);
+    })
+    .sort((a, b) => b - a);
 
   const topThreeTotal = elfTotals
     .slice(0, 3)

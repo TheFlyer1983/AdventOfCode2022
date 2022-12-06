@@ -1,4 +1,4 @@
-const { getData } = require('../utils');
+const { getData } = require('../src/utils');
 
 const data = getData(__dirname);
 
