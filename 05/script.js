@@ -1,4 +1,4 @@
-const { getData } = require('../src/utils');
+const { getData } = require('../utils');
 
 const data = getData(__dirname);
 
@@ -80,7 +80,7 @@ function formatInput(data) {
   return { stacks: stacksActual, moves };
 }
 
-function dayFivePartOne(data) {
+function solutionOne(data) {
   const { stacks, moves } = formatInput(data);
 
   for (const move of moves) {
@@ -96,9 +96,10 @@ function dayFivePartOne(data) {
 
   const result = stacks.map((stack) => stack.peek()).join('');
   console.log(`Part One Result - ${result}`);
+  return result;
 }
 
-function dayFivePartTwo(data) {
+function solutionTwo(data) {
   const { stacks, moves } = formatInput(data);
 
   const tempStack = createStack();
@@ -121,7 +122,13 @@ function dayFivePartTwo(data) {
 
   const result = stacks.map((stack) => stack.peek()).join('');
   console.log(`Part Two Result - ${result}`);
+  return result
 }
 
-dayFivePartOne(data);
-dayFivePartTwo(data);
+solutionOne(data);
+solutionTwo(data);
+
+module.exports = {
+  solutionOne,
+  solutionTwo
+};

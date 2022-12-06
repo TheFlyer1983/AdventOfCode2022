@@ -2,9 +2,9 @@ const { getData } = require('../utils');
 
 const data = getData(__dirname);
 
-function dayFour(data) {
+function solutionOne(data) {
   const inputArray = data
-    .toString()
+    .trim()
     .split('\n')
     .map((item) => item.split(','));
 
@@ -24,6 +24,16 @@ function dayFour(data) {
     })
     .filter((range) => range !== undefined);
 
+  console.log(`Part One Total - ${fullyOverlappingRanges.length}`);
+  return fullyOverlappingRanges.length;
+}
+
+function solutionTwo(data) {
+  const inputArray = data
+    .trim()
+    .split('\n')
+    .map((item) => item.split(','));
+
   const overlappingRanges = inputArray
     .map((pair) => {
       const range1 = pair.slice(0, 1)[0].split('-');
@@ -40,8 +50,14 @@ function dayFour(data) {
     })
     .filter((range) => range !== undefined);
 
-  console.log(`Part One Total - ${fullyOverlappingRanges.length}`);
   console.log(`Part Two Total - ${overlappingRanges.length}`);
+  return overlappingRanges.length;
 }
 
-dayFour(data);
+solutionOne(data);
+solutionTwo(data);
+
+module.exports = {
+  solutionOne,
+  solutionTwo
+};

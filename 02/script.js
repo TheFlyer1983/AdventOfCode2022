@@ -1,17 +1,20 @@
 const { getData } = require('../utils');
 
 const data = getData(__dirname);
+console.log(data);
 
-function dayTwo(data) {
-  const array = data
-    .toString()
+function getPairs(data) {
+  return data
+    .trim()
     .split('\n')
     .map((go) => go.split(' '));
+}
 
+function solutionOne(data) {
+  const inputArray = getPairs(data);
   let totalPartOne = 0;
-  let totalPartTwo = 0;
 
-  array.map((attempt) => {
+  inputArray.map((attempt) => {
     if (attempt[0] === 'A') {
       if (attempt[1] === 'X') {
         totalPartOne = totalPartOne + 1 + 3; //draw
@@ -40,8 +43,15 @@ function dayTwo(data) {
   });
 
   console.log(`Part One Total ${totalPartOne}`);
+  return totalPartOne;
+}
 
-  array.map((attempt) => {
+function solutionTwo(data) {
+  const inputArray = getPairs(data);
+
+  let totalPartTwo = 0;
+
+  inputArray.map((attempt) => {
     if (attempt[0] === 'A') {
       //Rock
       if (attempt[1] === 'X') {
@@ -79,6 +89,14 @@ function dayTwo(data) {
   });
 
   console.log(`Part Two Total ${totalPartTwo}`);
+  return totalPartTwo;
 }
 
-dayTwo(data);
+solutionOne(data);
+solutionTwo(data);
+
+module.exports = {
+  solutionOne,
+  solutionTwo,
+  getPairs
+};

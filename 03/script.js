@@ -4,7 +4,7 @@ const priorities = require('./constants');
 
 const data = getData(__dirname);
 
-function dayThree(data) {
+function solutionOne(data) {
   const duplicates = [];
 
   const inputArray = data.toString().split('\n');
@@ -40,6 +40,11 @@ function dayThree(data) {
   });
 
   console.log(`Part One Total - ${partOneTotal}`);
+  return partOneTotal;
+}
+
+function solutionTwo(data) {
+  const inputArray = data.trim().split('\n');
 
   const groups = [];
 
@@ -74,6 +79,10 @@ function dayThree(data) {
   );
 
   console.log(`Part Two Total - ${partTwoTotal}`);
+  return partTwoTotal;
 }
 
-dayThree(data);
+solutionOne(data);
+solutionTwo(data);
+
+module.exports = { solutionOne, solutionTwo };
