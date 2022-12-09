@@ -7,6 +7,9 @@ function getData(dir) {
   });
 }
 
+const add = (x, y) => x + y;
+
 module.exports = {
-  getData
+  getData,
+  add
 }
