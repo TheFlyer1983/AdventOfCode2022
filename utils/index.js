@@ -9,7 +9,19 @@ function getData(dir) {
 
 const add = (x, y) => x + y;
 
+const subtract = (x, y) => x - y;
+
+const multiply = (x, y) => x * y;
+
+const product = (nums) => nums.reduce(multiply);
+
+const divide = (x, y) => x / y
+
 module.exports = {
   getData,
-  add
-}
+  add,
+  subtract,
+  multiply,
+  product,
+  divide
+};
